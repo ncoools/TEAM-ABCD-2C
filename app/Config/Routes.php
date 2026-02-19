@@ -21,5 +21,23 @@ $routes->post('users/update', 'Users::update');
 $routes->delete('users/delete/(:num)', 'Users::delete/$1');
 $routes->post('users/fetchRecords', 'Users::fetchRecords');
 
+// Animal routes
+
+$routes->get('/animals', 'Animals::index');
+$routes->post('animals/save', 'Animals::save');
+$routes->get('animals/edit/(:segment)', 'Animals::edit/$1');
+$routes->post('animals/update', 'Animals::update');
+$routes->delete('animals/delete/(:num)', 'Animals::delete/$1');
+$routes->post('animals/fetchRecords', 'Animals::fetchRecords');
+
+// Cellphones routes
+
+$routes->get('/cellphones', 'Cellphones::index');
+$routes->post('cellphones/save', 'Cellphones::save');
+$routes->get('cellphones/edit/(:segment)', 'Cellphones::edit/$1');
+$routes->post('cellphones/update', 'Cellphones::update');
+$routes->delete('cellphones/delete/(:num)', 'Cellphones::delete/$1');
+$routes->post('cellphones/fetchRecords', 'Cellphones::fetchRecords');
+
 // Logs routes for admin
 $routes->get('/log', 'Logs::log');
