@@ -29,12 +29,12 @@ $routes->delete('person/delete/(:num)', 'Person::delete/$1');
 $routes->post('person/fetchRecords', 'Person::fetchRecords');
 
 // Profiling routes
-$routes->get('/profiling', 'Profiling::index');
-$routes->post('profiling/save', 'Profiling::save');
-$routes->get('profiling/edit/(:segment)', 'Profiling::edit/$1');
-$routes->post('profiling/update', 'Profiling::update');
-$routes->delete('profiling/delete/(:num)', 'Profiling::delete/$1');
-$routes->post('profiling/fetchRecords', 'Profiling::fetchRecords');
+$routes->get('/foods', 'Foods::index');
+$routes->post('foods/save', 'Foods::save');
+$routes->get('foods/edit/(:segment)', 'Foods::edit/$1');
+$routes->post('foods/update', 'Foods::update');
+$routes->delete('foods/delete/(:num)', 'Foods::delete/$1');
+$routes->post('foods/fetchRecords', 'Foods::fetchRecords');
 
 // Logs routes for admin
 $routes->get('/log', 'Logs::log');
