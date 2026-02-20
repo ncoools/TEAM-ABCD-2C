@@ -13,7 +13,6 @@ $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/logout', 'Auth::logout');
 
 // User Acounts routes
-
 $routes->get('/users', 'Users::index');
 $routes->post('users/save', 'Users::save');
 $routes->get('users/edit/(:segment)', 'Users::edit/$1');
@@ -38,6 +37,21 @@ $routes->get('cellphones/edit/(:segment)', 'Cellphones::edit/$1');
 $routes->post('cellphones/update', 'Cellphones::update');
 $routes->delete('cellphones/delete/(:num)', 'Cellphones::delete/$1');
 $routes->post('cellphones/fetchRecords', 'Cellphones::fetchRecords');
+// Person routes
+$routes->get('/person', 'Person::index');
+$routes->post('person/save', 'Person::save');
+$routes->get('person/edit/(:segment)', 'Person::edit/$1');
+$routes->post('person/update', 'Person::update');
+$routes->delete('person/delete/(:num)', 'Person::delete/$1');
+$routes->post('person/fetchRecords', 'Person::fetchRecords');
+
+// Profiling routes
+$routes->get('/profiling', 'Profiling::index');
+$routes->post('profiling/save', 'Profiling::save');
+$routes->get('profiling/edit/(:segment)', 'Profiling::edit/$1');
+$routes->post('profiling/update', 'Profiling::update');
+$routes->delete('profiling/delete/(:num)', 'Profiling::delete/$1');
+$routes->post('profiling/fetchRecords', 'Profiling::fetchRecords');
 
 $routes->get('/foods', 'Foods::index');
 $routes->post('foods/save', 'Foods::save');

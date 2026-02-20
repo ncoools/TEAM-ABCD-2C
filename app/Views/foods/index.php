@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?= $this->extend('theme/template') ?>
 
 <?= $this->section('content') ?>
@@ -131,3 +132,4 @@
 <script src="<?= base_url('js/foods/foods.js') ?>"></script>
 <?= $this->endSection() ?>
 <!-- Mark Anthony Puno -->
+=======

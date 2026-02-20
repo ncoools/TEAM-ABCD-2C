@@ -1,16 +1,15 @@
-
 <?php
 
 namespace App\Models;
 
 use CodeIgniter\Model;
 
-class FoodsModel extends Model
+class PersonModel extends Model
 {
-    protected $table = 'foods';
+    protected $table = 'person';
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['name', 'price'];
+    protected $allowedFields = ['name','bday'];
 
     public function getRecords($start, $length, $searchValue = '')
     {
@@ -32,5 +31,4 @@ class FoodsModel extends Model
 
         return ['data' => $data, 'filtered' => $filteredRecords];
     }
-};
-
+}

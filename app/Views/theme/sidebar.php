@@ -12,7 +12,7 @@
     top: 0;
     height: 100%;
     width: 4px;
-    background: orange;
+    background: blue;
     border-radius: 0 3px 3px 0;
 
     transform: scaleY(0);
@@ -93,6 +93,18 @@ body.dark-mode .main-sidebar .nav-link:hover {
         <p>Activity Logs</p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="<?= base_url('person') ?>" class="nav-link <?= is_active(1, 'person') ?>">
+        <i class="nav-icon fas fa-user-friends"></i>
+        <p>Person</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="<?= base_url('profiling') ?>" class="nav-link <?= is_active(1, 'profiling') ?>">
+        <i class="nav-icon fas fa-users"></i>
+        <p>Profiling</p>
+      </a>
+    </li>
      <li class="nav-item">
       <a href="<?= base_url('users') ?>" class="nav-link <?= is_active(1, 'users') ?>">
         <i class="nav-icon fas fa-user-lock"></i>
@@ -117,6 +129,11 @@ body.dark-mode .main-sidebar .nav-link:hover {
        <p>Foods</p>
      </a>
    </li>
+      <a href="<?= base_url('foods') ?>" class="nav-link <?= is_active(1, 'foods') ?>">
+        <i class="nav-icon fa fa-cutlery"></i>
+        <p>Foods</p>
+      </a>
+    </li>
   </ul>
 </nav>
 </div>
