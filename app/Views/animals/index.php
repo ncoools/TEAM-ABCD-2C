@@ -1,3 +1,4 @@
+
 <?= $this->extend('theme/template') ?>
 
 <?= $this->section('content') ?>
@@ -18,8 +19,6 @@
         </div>
     </div>
 
-
-
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -33,6 +32,9 @@
                                 </button>
                             </div>
                         </div>
+
+<!-- READ -->
+
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped table-sm">
                                 <thead>
@@ -53,8 +55,78 @@
             </div>
         </div>
 
+<!--CREAT -->
+        <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editUserModalLabel"><i class="far fa-edit fa fw"></i> Edit Record</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="editUserForm">
+                        <?= csrf_field() ?>
+                        <div class="modal-body">
+
+                            <input type="hidden" id="userId" name="id">
+
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="name" id="name" class="form-control" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="classes">Classes</label>
+                                <input type="text" class="form-control" id="email" name="classes" required>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class='fas fa-times-circle'></i> Cancel</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+
+<!-- UPDATE -->
+
+        
+        <div class="modal fade" id="AddNewModal" tabindex="-1" role="dialog" aria-labelledby="AddNewModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <form id="addUserForm">
+                    <?= csrf_field() ?>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><i class="fa fa-plus-circle fa fw"></i> Add New</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="name" class="form-control" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Classes</label>
+                                <input type="text" name="classes" class="form-control" required />
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class='fas fa-times-circle'></i> Cancel</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
 
 
+    </section>
+</div>
 <div class="toasts-top-right fixed" style="position: fixed; top: 1rem; right: 1rem; z-index: 9999;"></div>
 <?= $this->endSection() ?>
 
@@ -66,4 +138,3 @@
 <script src="<?= base_url('js/animals/animals.js') ?>"></script>
 <?= $this->endSection() ?>
 
-<!-- NIcole O. Rendon --> 
