@@ -39,5 +39,13 @@ $routes->post('cellphones/update', 'Cellphones::update');
 $routes->delete('cellphones/delete/(:num)', 'Cellphones::delete/$1');
 $routes->post('cellphones/fetchRecords', 'Cellphones::fetchRecords');
 
+$routes->get('/foods', 'Foods::index');
+$routes->post('foods/save', 'Foods::save');
+$routes->get('foods/edit/(:segment)', 'Foods::edit/$1');
+$routes->post('foods/update', 'Foods::update');
+$routes->delete('foods/delete/(:num)', 'Foods::delete/$1');
+$routes->post('foods/fetchRecords', 'Foods::fetchRecords');
+
+
 // Logs routes for admin
 $routes->get('/log', 'Logs::log');

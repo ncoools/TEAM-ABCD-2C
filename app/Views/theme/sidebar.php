@@ -111,6 +111,12 @@ body.dark-mode .main-sidebar .nav-link:hover {
        <p>Animals</p>
      </a>
    </li>
+   <li class="nav-item">
+     <a href="<?= base_url('foods') ?>" class="nav-link <?= is_active(1, 'foods') ?>">
+       <i class="nav-icon fas fa-cat"></i>
+       <p>Foods</p>
+     </a>
+   </li>
   </ul>
 </nav>
 </div>
