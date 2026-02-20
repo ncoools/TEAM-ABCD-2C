@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?= $this->extend('theme/template') ?>
 
 <?= $this->section('content') ?>
@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">foods</h1>
+                    <h1 class="m-0">Animals and Classes</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -25,13 +25,16 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">List of foods</h3>
+                            <h3 class="card-title">List of Animals</h3>
                             <div class="float-right">
                                 <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddNewModal">
                                     <i class="fa fa-plus-circle fa fw"></i> Add New
                                 </button>
                             </div>
                         </div>
+
+<!-- READ -->
+
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped table-sm">
                                 <thead>
@@ -39,7 +42,7 @@
                                         <th>No.</th>
                                         <th style="display:none;">id</th>
                                         <th>Name</th>
-                                        <th>Price</th>
+                                        <th>Classes</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -52,6 +55,7 @@
             </div>
         </div>
 
+<!--CREAT -->
         <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -73,8 +77,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="classes">price</label>
-                                <input type="Number" class="form-control" id="email" name="price" required>
+                                <label for="classes">Classes</label>
+                                <input type="text" class="form-control" id="email" name="classes" required>
                             </div>
 
                         </div>
@@ -87,7 +91,9 @@
             </div>
         </div>
 
-        <!-- ✅ Add New Modal -->
+<!-- UPDATE -->
+
+        
         <div class="modal fade" id="AddNewModal" tabindex="-1" role="dialog" aria-labelledby="AddNewModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <form id="addUserForm">
@@ -105,8 +111,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Price</label>
-                                <input type="Number" name="price" class="form-control" required />
+                                <label>Classes</label>
+                                <input type="text" name="classes" class="form-control" required />
                             </div>
 
                             <div class="modal-footer">
@@ -129,7 +135,6 @@
 <script>
     const baseUrl = "<?= base_url() ?>";
 </script>
-<script src="<?= base_url('js/foods/foods.js') ?>"></script>
+<script src="<?= base_url('js/animals/animals.js') ?>"></script>
 <?= $this->endSection() ?>
-<!-- Mark Anthony Puno -->
-=======
+

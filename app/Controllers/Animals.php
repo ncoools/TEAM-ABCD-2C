@@ -2,33 +2,33 @@
 
 namespace App\Controllers;
 
-use App\Models\FoodsModel;
+use App\Models\AnimalModel;
 use CodeIgniter\Controller;
 use App\Models\LogModel;
 
-class Foods extends Controller
+class Animals extends Controller
 {
     public function index(){
-        $model = new FoodsModel();
-        $data['foods'] = $model->findAll();
-        return view('foods/index', $data);
+        $model = new AnimalModel();
+        $data['animals'] = $model->findAll();
+        return view('animals/index', $data);
     }
 
     public function save(){
         $name = $this->request->getPost('name');
-        $price = $this->request->getPost('price');
+        $classes = $this->request->getPost('classes');
 
-        $foodsModel = new \App\Models\FoodsModel();
+        $animalModel = new \App\Models\AnimalModel();
         $logModel = new LogModel();
 
         $data = [
             'name'       => $name,
-            'price'      => $price,
+            'classes'      => $classes,
             'updated_at' => date('Y-m-d H:i:s'),
             'deleted_at' => date('Y-m-d H:i:s')
         ];
 
-        if ($foodsModel->insert($data)) {
+        if ($animalModel->insert($data)) {
             $logModel->addLog('New User has been added: ' . $name, 'ADD');
             return $this->response->setJSON(['status' => 'success']);
         } else {
@@ -37,15 +37,15 @@ class Foods extends Controller
     }
 
     public function update(){
-        $model = new FoodsModel();
+        $model = new AnimalModel();
         $logModel = new LogModel();
         $userId = $this->request->getPost('id');
         $name = $this->request->getPost('name');
-        $price= $this->request->getPost('price');
+        $classes = $this->request->getPost('classes');
 
         $userData = [
             'name'       => $name,
-            'price'      => $price,
+            'classes'      => $classes,
             'updated_at' => date('Y-m-d H:i:s'),
             'deleted_at' => date('Y-m-d H:i:s')
         ];
@@ -71,7 +71,7 @@ class Foods extends Controller
     }
 
     public function edit($id){
-        $model = new FoodsModel();
+        $model = new AnimalModel();
     $user = $model->find($id); // Fetch user by ID
 
     if ($user) {
@@ -82,7 +82,7 @@ class Foods extends Controller
 }
 
 public function delete($id){
-    $model = new FoodsModel();
+    $model = new AnimalModel();
     $logModel = new LogModel();
     $user = $model->find($id);
     if (!$user) {
@@ -102,7 +102,7 @@ public function delete($id){
 public function fetchRecords()
 {
     $request = service('request');
-    $model = new \App\Models\FoodsModel();
+    $model = new \App\Models\AnimalModel();
 
     $start = $request->getPost('start') ?? 0;
     $length = $request->getPost('length') ?? 10;

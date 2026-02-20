@@ -9,7 +9,7 @@ function showToast(type, message) {
 $('#addUserForm').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
-        url: baseUrl + 'foods/save',
+        url: baseUrl + 'cellphones/save',
         method: 'POST',
         data: $(this).serialize(),
         dataType: 'json',
@@ -17,12 +17,12 @@ $('#addUserForm').on('submit', function (e) {
             if (response.status === 'success') {
                 $('#AddNewModal').modal('hide');
                 $('#addUserForm')[0].reset();
-                showToast('success', 'Foods added successfully!');
+                showToast('success', 'Animal added successfully!');
                 setTimeout(() => {
                     location.reload();
                 }, 1000); 
             } else {
-                showToast('error', response.message || 'Failed to add food.');
+                showToast('error', response.message || 'Failed to add animal.');
             }
         },
         error: function () {
@@ -34,21 +34,21 @@ $('#addUserForm').on('submit', function (e) {
 $(document).on('click', '.edit-btn', function () {
    const userId = $(this).data('id'); 
    $.ajax({
-    url: baseUrl + 'foods/edit/' + userId,
+    url: baseUrl + 'cellphones/edit/' + userId,
     method: 'GET',
     dataType: 'json',
     success: function (response) {
         if (response.data) {
             $('#editUserModal #name').val(response.data.name);
             $('#editUserModal #userId').val(response.data.id);
-            $('#editUserModal #price').val(response.data.price);
+            $('#editUserModal #brand').val(response.data.brand);
             $('#editUserModal').modal('show');
         } else {
-            alert('Error fetching foods data');
+            alert('Error fetching animal data');
         }
     },
     error: function () {
-        alert('Error fetching food data');
+        alert('Error fetching animal data');
     }
 });
 });
@@ -59,14 +59,14 @@ $(document).ready(function () {
         e.preventDefault(); 
 
         $.ajax({
-            url: baseUrl + 'foods/update',
+            url: baseUrl + 'cellphones/update',
             method: 'POST',
             data: $(this).serialize(),
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
                     $('#editUserModal').modal('hide');
-                    showToast('success', 'Food Updated successfully!');
+                    showToast('success', 'Animal Updated successfully!');
                     setTimeout(() => location.reload(), 1000);
                 } else {
                     alert('Error updating: ' + (response.message || 'Unknown error'));
@@ -85,9 +85,9 @@ $(document).on('click', '.deleteUserBtn', function () {
     const csrfName = $('meta[name="csrf-name"]').attr('content');
     const csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-    if (confirm('Are you sure you want to delete this food?')) {
+    if (confirm('Are you sure you want to delete this animal?')) {
         $.ajax({
-            url: baseUrl + 'foods/delete/' + userId,
+            url: baseUrl + 'cellphones/delete/' + userId,
             method: 'POST', 
             data: {
                 _method: 'DELETE',
@@ -95,7 +95,7 @@ $(document).on('click', '.deleteUserBtn', function () {
             },
             success: function (response) {
                 if (response.success) {
-                    showToast('success', 'Food deleted successfully.');
+                    showToast('success', 'Animal deleted successfully.');
                     setTimeout(() => location.reload(), 1000);
                 } else {
                     alert(response.message || 'Failed to delete.');
@@ -118,7 +118,7 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         ajax: {
-            url: baseUrl + 'foods/fetchRecords',
+            url: baseUrl + 'cellphones/fetchRecords',
             type: 'POST',
             headers: {
                 'X-CSRF-TOKEN': csrfToken
@@ -128,7 +128,7 @@ $(document).ready(function () {
         { data: 'row_number' },
         { data: 'id', visible: false },
         { data: 'name' },
-        { data: 'price' },
+        { data: 'brand' },
         {
             data: null,
             orderable: false,

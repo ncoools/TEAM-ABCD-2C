@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?= $this->extend('theme/template') ?>
 
 <?= $this->section('content') ?>
@@ -7,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">foods</h1>
+                    <h1 class="m-0">cellphones and brand</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -25,7 +24,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">List of foods</h3>
+                            <h3 class="card-title">List of cellphones</h3>
                             <div class="float-right">
                                 <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#AddNewModal">
                                     <i class="fa fa-plus-circle fa fw"></i> Add New
@@ -39,7 +38,7 @@
                                         <th>No.</th>
                                         <th style="display:none;">id</th>
                                         <th>Name</th>
-                                        <th>Price</th>
+                                        <th>brand</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -73,8 +72,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="classes">price</label>
-                                <input type="Number" class="form-control" id="email" name="price" required>
+                                <label for="classes">brand</label>
+                                <input type="text" class="form-control" id="email" name="brand" required>
                             </div>
 
                         </div>
@@ -105,8 +104,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Price</label>
-                                <input type="Number" name="price" class="form-control" required />
+                                <label>brand</label>
+                                <input type="text" name="brand" class="form-control" required />
                             </div>
 
                             <div class="modal-footer">
@@ -129,7 +128,6 @@
 <script>
     const baseUrl = "<?= base_url() ?>";
 </script>
-<script src="<?= base_url('js/foods/foods.js') ?>"></script>
+<script src="<?= base_url('js/cellphones/cellphones.js') ?>"></script>
 <?= $this->endSection() ?>
 <!-- Mark Anthony Puno -->
-=======
