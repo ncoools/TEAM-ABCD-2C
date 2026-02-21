@@ -53,6 +53,7 @@ $routes->post('profiling/update', 'Profiling::update');
 $routes->delete('profiling/delete/(:num)', 'Profiling::delete/$1');
 $routes->post('profiling/fetchRecords', 'Profiling::fetchRecords');
 
+// Foods routes
 $routes->get('/foods', 'Foods::index');
 $routes->post('foods/save', 'Foods::save');
 $routes->get('foods/edit/(:segment)', 'Foods::edit/$1');
